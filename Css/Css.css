@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:wght@100..900&family=Kumbh+Sans:wght@100..900&family=Lexend+Deca:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+*{
+    --webkit-box-sizing: border-box;
+    --moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+body{
+    background-color: var(--Very-Light-Gray);
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 1rem;
+}
+
+/* main{
+    max-width: 900px;
+} */
+
+.container{
+    margin-bottom: 3rem;
+}
+
+.container .title{
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 200;
+    color: var(--Very-Dark-Blue);
+}
+.container .title span{
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container .about{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 21px;
+    text-align: center;
+    color: var(--Grayish-Blue);
+    margin-bottom: 4rem;
+}
+
+.parent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 30px 30px;
+}
+
+.box{
+    background-color: white;
+    padding: 20px;
+    height: 250px;
+    width: 350px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .4);
+    border-radius: .5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.box::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    top: 0;
+    left: 0;
+}
+
+.super::before{
+    background-color: var(--Cyan);
+}
+
+.team::before{
+    background-color: var(--Red);
+}
+
+.karma::before{
+    background-color: var(--Orange);
+}
+
+.calc::before{
+    background-color: var(--Blue);
+}
+
+.team{
+    grid-area: 1 / 2 / 3 / 3;
+}
+
+.super{
+    grid-area: 2 / 1 / 4 / 2;
+}
+
+.karma{
+    grid-area: 3 / 2 / 5 / 3;
+}
+
+.calc{
+    grid-area: 2 / 3 / 4 / 3;
+}
+
+.box img{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.box h3{
+    font-weight: 600;
+    padding: 10px 10px;
+    margin-bottom: .5rem;
+    color: var(--Very-Dark-Blue);
+}
+
+.box p{
+    color: var(--Grayish-Blue);
+}
+
+@media (max-width: 425px){
+    .container{
+        max-width: 350px;
+    }
+    /* في  اقدر اشتغل عادي ب فليكس ودي ميزة الموبايل بشتغل فيها اللي انا عايزه media*/
+    .parent{
+        display: flex;
+        flex-direction: column;
+    }
+    .container .about{
+        width: 320px;
+    }
+    .container .title{
+        width: 350px;
+        font-size: 25px;
+        text-align: center;
+    }
+
+}
+
